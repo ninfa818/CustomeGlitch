@@ -1,25 +1,25 @@
 <resources>
-    <string name="app_name">Glitch Photo Video Maker</string>
+    <string name="app_name" translatable="false">Media Editor</string>
 
 
-    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="admob_app_id" translatable="false">ca-app-pub-2682913626455725~4803263177</string>
 
-    <string name="google_baner">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="g_inr">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="google_baner" translatable="false">ca-app-pub-2682913626455725/7132352543</string>
+    <string name="g_inr" translatable="false">ca-app-pub-2682913626455725/9299350881</string>
 
 
     <string name="developer_id">Own InfoSoft</string>
 
-    <string name="parent_folder_name">Glitch Photo and Video Editor</string>
-    <string name="video_folder">Glitch Video</string>
+    <string name="parent_folder_name">Media Editor</string>
+    <string name="video_folder">Video</string>
     <string name="message1">Delete This Image ?</string>
     <string name="message2">Delete This Video ?</string>
     <string name="message3">Want to save Video ?</string>
     <string name="message4">You need to enable permissions to Record Video</string>
 
     <string name="my_creation">My Creation</string>
-    <string name="image_folder">Glitch Image</string>
-    <string name="live_folder">Glitch Live Image</string>
+    <string name="image_folder">Image</string>
+    <string name="live_folder">Live Image</string>
     <string name="nameimage">GlitchImage</string>
     <string name="namevideo">GlitchVideo</string>
 </resources>

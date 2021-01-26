@@ -161,25 +161,25 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("WrongConstant")
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) R.layout.activity_main);
+        setContentView(R.layout.activity_main);
 
 
-        this.btnsaveimg = (ImageView) findViewById(R.id.btn_save_img);
-        this.saveprocess = (TextView) findViewById(R.id.progress_txt_save);
-        this.loadingtext = (TextView) findViewById(R.id.loading_text);
-        this.layout = (RelativeLayout) findViewById(R.id.layout);
-        this.rgb = (ImageView) findViewById(R.id.rgb);
-        this.filter = (ImageView) findViewById(R.id.filter);
-        this.brightness = (ImageView) findViewById(R.id.brightness);
-        this.rgblayout = (LinearLayout) findViewById(R.id.rgblayout);
-        this.filterlayout = (LinearLayout) findViewById(R.id.filterlayout);
-        this.brightnesslayout = (LinearLayout) findViewById(R.id.brightnesslayout);
-        this.rgbcolor = (RelativeLayout) findViewById(R.id.rgbcolor);
-        this.filtercolor = (RelativeLayout) findViewById(R.id.filtercolor);
-        this.brightnesscolot = (RelativeLayout) findViewById(R.id.brightnesscolor);
-        this.parentrgb = (RelativeLayout) findViewById(R.id.parentrgb);
-        this.parentfilter = (RelativeLayout) findViewById(R.id.parentfilter);
-        this.parentbright = (RelativeLayout) findViewById(R.id.parentbright);
+        this.btnsaveimg = findViewById(R.id.btn_save_img);
+        this.saveprocess = findViewById(R.id.progress_txt_save);
+        this.loadingtext = findViewById(R.id.loading_text);
+        this.layout = findViewById(R.id.layout);
+        this.rgb = findViewById(R.id.rgb);
+        this.filter = findViewById(R.id.filter);
+        this.brightness = findViewById(R.id.brightness);
+        this.rgblayout = findViewById(R.id.rgblayout);
+        this.filterlayout = findViewById(R.id.filterlayout);
+        this.brightnesslayout = findViewById(R.id.brightnesslayout);
+        this.rgbcolor = findViewById(R.id.rgbcolor);
+        this.filtercolor = findViewById(R.id.filtercolor);
+        this.brightnesscolot = findViewById(R.id.brightnesscolor);
+        this.parentrgb = findViewById(R.id.parentrgb);
+        this.parentfilter = findViewById(R.id.parentfilter);
+        this.parentbright = findViewById(R.id.parentbright);
         this.rgb.setBackgroundResource(R.drawable.ic_rgb_pressed);
         this.filter.setBackgroundResource(R.drawable.ic_filter_unpressed);
         this.brightness.setBackgroundResource(R.drawable.ic_brightness_unpressed);
@@ -188,81 +188,61 @@ public class MainActivity extends AppCompatActivity {
         this.rgbcolor.setBackgroundColor(Color.parseColor("#3B424A"));
         this.filtercolor.setBackgroundColor(Color.parseColor("#3B424A"));
         this.brightnesscolot.setBackgroundColor(Color.parseColor("#3B424A"));
-        this.parentrgb.setOnClickListener(new OnClickListener() {
-            @SuppressLint("WrongConstant")
-            public void onClick(View view) {
-                MainActivity.this.rgblayout.setVisibility(0);
-                MainActivity.this.rgb.setBackgroundResource(R.drawable.ic_rgb_pressed);
-                MainActivity.this.filter.setBackgroundResource(R.drawable.ic_filter_unpressed);
-                MainActivity.this.brightness.setBackgroundResource(R.drawable.ic_brightness_unpressed);
-                MainActivity.this.parentrgb.setBackgroundColor(Color.parseColor("#00D3DA"));
-                MainActivity.this.parentfilter.setBackgroundColor(Color.parseColor("#3B424A"));
-                MainActivity.this.parentbright.setBackgroundColor(Color.parseColor("#3B424A"));
-                MainActivity.this.filterlayout.setVisibility(8);
-                MainActivity.this.brightnesslayout.setVisibility(8);
-            }
+        this.parentrgb.setOnClickListener(view -> {
+            MainActivity.this.rgblayout.setVisibility(0);
+            MainActivity.this.rgb.setBackgroundResource(R.drawable.ic_rgb_pressed);
+            MainActivity.this.filter.setBackgroundResource(R.drawable.ic_filter_unpressed);
+            MainActivity.this.brightness.setBackgroundResource(R.drawable.ic_brightness_unpressed);
+            MainActivity.this.parentrgb.setBackgroundColor(Color.parseColor("#00D3DA"));
+            MainActivity.this.parentfilter.setBackgroundColor(Color.parseColor("#3B424A"));
+            MainActivity.this.parentbright.setBackgroundColor(Color.parseColor("#3B424A"));
+            MainActivity.this.filterlayout.setVisibility(8);
+            MainActivity.this.brightnesslayout.setVisibility(8);
         });
-        this.parentfilter.setOnClickListener(new OnClickListener() {
-            @SuppressLint("WrongConstant")
-            public void onClick(View view) {
-                MainActivity.this.rgblayout.setVisibility(8);
-                MainActivity.this.rgb.setBackgroundResource(R.drawable.ic_rgb_unpressed);
-                MainActivity.this.filter.setBackgroundResource(R.drawable.ic_filter_pressed);
-                MainActivity.this.brightness.setBackgroundResource(R.drawable.ic_brightness_unpressed);
-                MainActivity.this.parentrgb.setBackgroundColor(Color.parseColor("#3B424A"));
-                MainActivity.this.parentfilter.setBackgroundColor(Color.parseColor("#00D3DA"));
-                MainActivity.this.parentbright.setBackgroundColor(Color.parseColor("#3B424A"));
-                MainActivity.this.filterlayout.setVisibility(0);
-                MainActivity.this.brightnesslayout.setVisibility(8);
-            }
+        this.parentfilter.setOnClickListener(view -> {
+            MainActivity.this.rgblayout.setVisibility(8);
+            MainActivity.this.rgb.setBackgroundResource(R.drawable.ic_rgb_unpressed);
+            MainActivity.this.filter.setBackgroundResource(R.drawable.ic_filter_pressed);
+            MainActivity.this.brightness.setBackgroundResource(R.drawable.ic_brightness_unpressed);
+            MainActivity.this.parentrgb.setBackgroundColor(Color.parseColor("#3B424A"));
+            MainActivity.this.parentfilter.setBackgroundColor(Color.parseColor("#00D3DA"));
+            MainActivity.this.parentbright.setBackgroundColor(Color.parseColor("#3B424A"));
+            MainActivity.this.filterlayout.setVisibility(0);
+            MainActivity.this.brightnesslayout.setVisibility(8);
         });
-        this.parentbright.setOnClickListener(new OnClickListener() {
-            @SuppressLint("WrongConstant")
-            public void onClick(View view) {
-                MainActivity.this.rgblayout.setVisibility(8);
-                MainActivity.this.rgb.setBackgroundResource(R.drawable.ic_rgb_unpressed);
-                MainActivity.this.filter.setBackgroundResource(R.drawable.ic_filter_unpressed);
-                MainActivity.this.brightness.setBackgroundResource(R.drawable.ic_brightness_pressed);
-                MainActivity.this.parentrgb.setBackgroundColor(Color.parseColor("#3B424A"));
-                MainActivity.this.parentfilter.setBackgroundColor(Color.parseColor("#3B424A"));
-                MainActivity.this.parentbright.setBackgroundColor(Color.parseColor("#00D3DA"));
-                MainActivity.this.filterlayout.setVisibility(8);
-                MainActivity.this.brightnesslayout.setVisibility(0);
-            }
+        this.parentbright.setOnClickListener(view -> {
+            MainActivity.this.rgblayout.setVisibility(8);
+            MainActivity.this.rgb.setBackgroundResource(R.drawable.ic_rgb_unpressed);
+            MainActivity.this.filter.setBackgroundResource(R.drawable.ic_filter_unpressed);
+            MainActivity.this.brightness.setBackgroundResource(R.drawable.ic_brightness_pressed);
+            MainActivity.this.parentrgb.setBackgroundColor(Color.parseColor("#3B424A"));
+            MainActivity.this.parentfilter.setBackgroundColor(Color.parseColor("#3B424A"));
+            MainActivity.this.parentbright.setBackgroundColor(Color.parseColor("#00D3DA"));
+            MainActivity.this.filterlayout.setVisibility(8);
+            MainActivity.this.brightnesslayout.setVisibility(0);
         });
         this.sharedPrefsxx = PreferenceManager.getDefaultSharedPreferences(this);
-        this.seekbar = (SeekBar) findViewById(R.id.seekBar);
+        this.seekbar = findViewById(R.id.seekBar);
         this.seekbar.getProgressDrawable().setColorFilter(-1, Mode.MULTIPLY);
-        this.btnback = (ImageView) findViewById(R.id.btn_back_main_screen);
-        this.btnback.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                MainActivity.this.startActivity(new Intent(MainActivity.this, ImportImageActivity.class));
-                MainActivity.this.finish();
-            }
+        this.btnback = findViewById(R.id.btn_back_main_screen);
+        this.btnback.setOnClickListener(view -> {
+            MainActivity.this.startActivity(new Intent(MainActivity.this, ImportImageActivity.class));
+            MainActivity.this.finish();
         });
-        this.btndefaultframes = (Button) findViewById(R.id.btn_default_frames);
-        this.btn3frames = (Button) findViewById(R.id.btn_3_frames);
-        this.btn4frames = (Button) findViewById(R.id.btn_4_frames);
-        this.btn5frames = (Button) findViewById(R.id.btn_5_frames);
-        this.moveleftright = (Button) findViewById(R.id.btn_move_lefright);
-        this.moveupdown = (Button) findViewById(R.id.btn_move_updown);
-        this.movediagonal = (Button) findViewById(R.id.btn_move_diagonal);
-        this.btnsaveimg.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-
-                Ad_class.showFullAd(MainActivity.this, new Ad_class.onLisoner() {
-                    @Override
-                    public void click() {
-
-                        Bitmap createBitmap = Bitmap.createBitmap(MainActivity.this.main.getWidth(), MainActivity.this.main.getHeight(), Config.ARGB_8888);
-                        MainActivity.this.main.draw(new Canvas(createBitmap));
-                        MainActivity.this.newcroped = Bitmap.createBitmap(createBitmap, 50, 50, createBitmap.getWidth() - 50, createBitmap.getHeight() - 100);
-                        MainActivity.enableDisableView(MainActivity.this.layout, false);
-                        new SaveImageToExt().execute(new Object[0]);
-                    }
-                });
-            }
-        });
+        this.btndefaultframes = findViewById(R.id.btn_default_frames);
+        this.btn3frames = findViewById(R.id.btn_3_frames);
+        this.btn4frames = findViewById(R.id.btn_4_frames);
+        this.btn5frames = findViewById(R.id.btn_5_frames);
+        this.moveleftright = findViewById(R.id.btn_move_lefright);
+        this.moveupdown = findViewById(R.id.btn_move_updown);
+        this.movediagonal = findViewById(R.id.btn_move_diagonal);
+        this.btnsaveimg.setOnClickListener(view -> Ad_class.showFullAd(MainActivity.this, () -> {
+            Bitmap createBitmap = Bitmap.createBitmap(MainActivity.this.main.getWidth(), MainActivity.this.main.getHeight(), Config.ARGB_8888);
+            MainActivity.this.main.draw(new Canvas(createBitmap));
+            MainActivity.this.newcroped = Bitmap.createBitmap(createBitmap, 50, 50, createBitmap.getWidth() - 50, createBitmap.getHeight() - 100);
+            MainActivity.enableDisableView(MainActivity.this.layout, false);
+            new SaveImageToExt().execute(new Object[0]);
+        }));
         Log.e("Color: ", String.format("#%06X", new Object[]{Integer.valueOf(16842755)}));
         final int[][] iArr = {new int[]{ResourcesCompat.getColor(getResources(), R.color.white, null), ResourcesCompat.getColor(getResources(), R.color.white, null)}, new int[]{ResourcesCompat.getColor(getResources(), R.color.VividSkyBlue, null), ResourcesCompat.getColor(getResources(), R.color.Red, null)}, new int[]{ResourcesCompat.getColor(getResources(), R.color.Red, null), ResourcesCompat.getColor(getResources(), R.color.VividSkyBlue, null)}, new int[]{ResourcesCompat.getColor(getResources(), R.color.Lime, null), ResourcesCompat.getColor(getResources(), R.color.Magenta, null)}, new int[]{ResourcesCompat.getColor(getResources(), R.color.Magenta, null), ResourcesCompat.getColor(getResources(), R.color.Lime, null)}, new int[]{ResourcesCompat.getColor(getResources(), R.color.Lime, null), ResourcesCompat.getColor(getResources(), R.color.MediumBlue, null)}, new int[]{ResourcesCompat.getColor(getResources(), R.color.MediumBlue, null), ResourcesCompat.getColor(getResources(), R.color.Lime, null)}, new int[]{ResourcesCompat.getColor(getResources(), R.color.Magenta, null), ResourcesCompat.getColor(getResources(), R.color.CyberGreen, null)}, new int[]{ResourcesCompat.getColor(getResources(), R.color.CyberGreen, null), ResourcesCompat.getColor(getResources(), R.color.Magenta, null)}, new int[]{ResourcesCompat.getColor(getResources(), R.color.ElectricPurple, null), ResourcesCompat.getColor(getResources(), R.color.TurquoiseBlue, null)}, new int[]{ResourcesCompat.getColor(getResources(), R.color.TurquoiseBlue, null), ResourcesCompat.getColor(getResources(), R.color.ElectricPurple, null)}};
         PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putInt("FrameCount", 2).apply();
@@ -282,57 +262,45 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.setButtonBG(2, 1);
             }
         });
-        this.moveupdown.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                PreferenceManager.getDefaultSharedPreferences(MainActivity.this.getApplicationContext()).edit().putInt("MoveOption", 2).apply();
-                MainActivity.this.setButtonBG(2, 3);
-            }
+        this.moveupdown.setOnClickListener(view -> {
+            PreferenceManager.getDefaultSharedPreferences(MainActivity.this.getApplicationContext()).edit().putInt("MoveOption", 2).apply();
+            MainActivity.this.setButtonBG(2, 3);
         });
-        this.movediagonal.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                PreferenceManager.getDefaultSharedPreferences(MainActivity.this.getApplicationContext()).edit().putInt("MoveOption", 3).apply();
-                MainActivity.this.setButtonBG(2, 2);
-            }
+        this.movediagonal.setOnClickListener(view -> {
+            PreferenceManager.getDefaultSharedPreferences(MainActivity.this.getApplicationContext()).edit().putInt("MoveOption", 3).apply();
+            MainActivity.this.setButtonBG(2, 2);
         });
-        this.btndefaultframes.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                PreferenceManager.getDefaultSharedPreferences(MainActivity.this.getApplicationContext()).edit().putInt("FrameCount", 2).apply();
-                MainActivity.this.setButtonBG(1, 2);
-                MainActivity.this.framenumber = 2;
-                new LoadFrames().execute(new Object[0]);
-                MainActivity.this.gapcoloradapter = new ColorAdapter(iArr, MainActivity.this.iv, MainActivity.this.getApplicationContext());
-                MainActivity.this.rccolor.setAdapter(MainActivity.this.gapcoloradapter);
-            }
+        this.btndefaultframes.setOnClickListener(view -> {
+            PreferenceManager.getDefaultSharedPreferences(MainActivity.this.getApplicationContext()).edit().putInt("FrameCount", 2).apply();
+            MainActivity.this.setButtonBG(1, 2);
+            MainActivity.this.framenumber = 2;
+            new LoadFrames().execute(new Object[0]);
+            MainActivity.this.gapcoloradapter = new ColorAdapter(iArr, MainActivity.this.iv, MainActivity.this.getApplicationContext());
+            MainActivity.this.rccolor.setAdapter(MainActivity.this.gapcoloradapter);
         });
-        this.btn3frames.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                PreferenceManager.getDefaultSharedPreferences(MainActivity.this.getApplicationContext()).edit().putInt("FrameCount", 3).apply();
-                MainActivity.this.setButtonBG(1, 3);
-                MainActivity.this.framenumber = 3;
-                new LoadFrames().execute(new Object[0]);
-                MainActivity.this.gapcoloradapter = new ColorAdapter(iArr, MainActivity.this.iv, MainActivity.this.getApplicationContext());
-                MainActivity.this.rccolor.setAdapter(MainActivity.this.gapcoloradapter);
-            }
+        this.btn3frames.setOnClickListener(view -> {
+            PreferenceManager.getDefaultSharedPreferences(MainActivity.this.getApplicationContext()).edit().putInt("FrameCount", 3).apply();
+            MainActivity.this.setButtonBG(1, 3);
+            MainActivity.this.framenumber = 3;
+            new LoadFrames().execute(new Object[0]);
+            MainActivity.this.gapcoloradapter = new ColorAdapter(iArr, MainActivity.this.iv, MainActivity.this.getApplicationContext());
+            MainActivity.this.rccolor.setAdapter(MainActivity.this.gapcoloradapter);
         });
-        this.btn4frames.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                PreferenceManager.getDefaultSharedPreferences(MainActivity.this.getApplicationContext()).edit().putInt("FrameCount", 4).apply();
-                MainActivity.this.setButtonBG(1, 4);
-                MainActivity.this.framenumber = 4;
-                new LoadFrames().execute(new Object[0]);
-                MainActivity.this.gapcoloradapter = new ColorAdapter(iArr, MainActivity.this.iv, MainActivity.this.getApplicationContext());
-                MainActivity.this.rccolor.setAdapter(MainActivity.this.gapcoloradapter);
-            }
+        this.btn4frames.setOnClickListener(view -> {
+            PreferenceManager.getDefaultSharedPreferences(MainActivity.this.getApplicationContext()).edit().putInt("FrameCount", 4).apply();
+            MainActivity.this.setButtonBG(1, 4);
+            MainActivity.this.framenumber = 4;
+            new LoadFrames().execute(new Object[0]);
+            MainActivity.this.gapcoloradapter = new ColorAdapter(iArr, MainActivity.this.iv, MainActivity.this.getApplicationContext());
+            MainActivity.this.rccolor.setAdapter(MainActivity.this.gapcoloradapter);
         });
-        this.btn5frames.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                PreferenceManager.getDefaultSharedPreferences(MainActivity.this.getApplicationContext()).edit().putInt("FrameCount", 5).apply();
-                MainActivity.this.setButtonBG(1, 5);
-                MainActivity.this.framenumber = 5;
-                new LoadFrames().execute(new Object[0]);
-                MainActivity.this.gapcoloradapter = new ColorAdapter(iArr, MainActivity.this.iv, MainActivity.this.getApplicationContext());
-                MainActivity.this.rccolor.setAdapter(MainActivity.this.gapcoloradapter);
-            }
+        this.btn5frames.setOnClickListener(view -> {
+            PreferenceManager.getDefaultSharedPreferences(MainActivity.this.getApplicationContext()).edit().putInt("FrameCount", 5).apply();
+            MainActivity.this.setButtonBG(1, 5);
+            MainActivity.this.framenumber = 5;
+            new LoadFrames().execute(new Object[0]);
+            MainActivity.this.gapcoloradapter = new ColorAdapter(iArr, MainActivity.this.iv, MainActivity.this.getApplicationContext());
+            MainActivity.this.rccolor.setAdapter(MainActivity.this.gapcoloradapter);
         });
         this.seekbar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
             int option;

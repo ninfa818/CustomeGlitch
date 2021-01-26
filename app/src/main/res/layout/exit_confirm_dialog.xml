@@ -174,7 +174,7 @@
                     android:layout_gravity="center"
                     android:background="@android:color/transparent"
 
-                    android:src="@mipmap/icon" />
+                    android:src="@mipmap/ic_launcher" />
             </androidx.cardview.widget.CardView>
         </RelativeLayout>
     </RelativeLayout>

@@ -195,7 +195,7 @@ public class ImportImageActivity extends AppCompatActivity {
             startActivity(new Intent("android.intent.action.VIEW", Uri.parse(sb2.toString())));
         } else if (itemId == R.id.privacy) {
 
-            String url = "https://www.google.com/";
+            String url = "https://privacy.laodev.info/MediaEditor.php";
 
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
